@@ -3,7 +3,7 @@
   --vermelho: #e41b13;
   --cinza-claro: #f5f5f5;
   --texto: #333;
-  font-size: 12px; 
+  font-size: clamp(14px, 1vw + 0.8rem, 17px);
 }
 
 * {
@@ -21,10 +21,17 @@ body {
   color: var(--texto);
   scroll-behavior: smooth;
   background: white;
-  max-width: 1400px; 
   margin: 0 auto;
 }
 
+html, body {
+  height: 100%;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
 
 header {
   background: linear-gradient(90deg, rgba(0,61,165,0.9), rgba(228,27,19,0.9));
@@ -38,7 +45,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 3rem;
+  padding: 2rem 3rem;
   transition: all 0.3s ease;
 }
 
@@ -58,7 +65,7 @@ header h1 {
 }
 
 nav a {
-  margin-left: 25px;
+  margin-left: 30px;
   text-decoration: none;
   color: white;
   font-weight: 500;
@@ -73,16 +80,14 @@ nav a:hover {
 
 .hero {
   position: relative;
-  height: 85vh; 
-  width: 100vw;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
   text-align: center;
-  padding: 0 1rem;
-  overflow: hidden;
+  height: 100vh;
+  color: #fff;
+  padding: 0 20px;
+  overflow: hidden; /* garante que os pseudo-elementos fiquem contidos */
 }
 
 /* Imagem de fundo */
@@ -90,8 +95,8 @@ nav a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: url(imagens/corretores.jpeg) center bottom / cover no-repeat;
-  opacity: 2;
+  background: url("imagens/corretores.jpeg") center bottom / cover no-repeat;
+  opacity: 1; /* estava 2 (inválido) */
   z-index: 0;
 }
 
@@ -100,37 +105,51 @@ nav a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(0,61,165,0.85), rgba(228,27,19,0.75));
+  background: linear-gradient(
+    90deg,
+    rgba(0, 61, 165, 0.85),
+    rgba(228, 27, 19, 0.75)
+  );
   z-index: 1;
 }
 
-.hero h2,
-.hero button {
+/* Conteúdo central */
+.hero-content {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column; /* texto e botão em coluna */
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* espaço entre o texto e o botão */
+  max-width: 800px;
 }
 
+/* Título */
 .hero h2 {
   color: var(--cinza-claro);
+  font-size: 2rem;
+  line-height: 1.4;
+  font-weight: 700;
+  margin: 0;
 }
 
+/* Botão */
 .hero button {
-  background: var(--vermelho);
-  color: white;
+  background-color: #e41b13;
+  color: #fff;
   border: none;
-  padding: 1rem 2rem;
-  margin-top: 2rem;
-  border-radius: 50px;
+  border-radius: 30px;
+  padding: 15px 40px;
   font-size: 1.1rem;
   cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .hero button:hover {
-  background: #b5120e;
-  transform: scale(1.05);
+  background-color: #c01711;
+  transform: translateY(-3px);
 }
 
 /* SECTIONS */
@@ -224,12 +243,15 @@ form button:hover {
   transform: scale(1.03);
 }
 
+
 /* FOOTER */
 footer {
   text-align: center;
   padding: 2rem 2rem;
   background: linear-gradient(135deg, var(--azul), var(--vermelho));
   color: white;
+  position: relative;
+  width: 100%;
 }
 
 footer p {
@@ -488,4 +510,55 @@ footer .social a:hover {
     width: 100%;
     height: auto;
   }
+}
+
+#globais {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 80px 40px;
+  background-color: var(--cinza-claro);
+  overflow: hidden;
+}
+
+#globais::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("imagens/remaxGlobalSemFundo.png") center center / contain no-repeat;
+  opacity: 0.3; 
+  z-index: 0;
+}
+
+#globais .info-content,
+#globais .info-image {
+  position: relative;
+  z-index: 1; 
+}
+
+#globais .info-content {
+  text-align: center;
+  max-width: 700px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.stat svg {
+  margin-bottom: 10px;
+}
+.stat h3 {
+  font-size: 2rem;
+  color: var(--azul);
+  margin-bottom: 5px;
+}
+.stat p {
+  font-size: 1rem;
+  color: var(--texto);
 }

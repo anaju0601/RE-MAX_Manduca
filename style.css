@@ -534,6 +534,72 @@ footer .social a:hover {
 }
 
 @media (max-width: 768px) {
+  .info-section,
+  .info-section.reverse {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    gap: 1rem;
+  }
+
+  .info-image {
+    margin-top: 1rem;
+  }
+
+  .info-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .info-content p {
+    font-size: 0.85rem;
+  }
+
+  .info-image img {
+    max-width: 280px;
+  }
+
+  .stats-grid {
+    gap: 0.6rem;
+  }
+
+  .stat {
+    padding: 0.7rem;
+  }
+
+  .stat h3 {
+    font-size: 1rem;
+  }
+
+  .stat p {
+    font-size: 0.75rem;
+  }
+
+  .depoimentos-grid {
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+  }
+
+  .depoimento {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .depoimento:nth-child(even) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .depoimento video {
+    max-width: 350px;
+    width: 100%;
+  }
+
+  .depoimento .texto {
+    margin-top: 1rem;
+  }
+
   .universidade-intro {
     text-align: center;
     margin: 1rem auto;
@@ -547,6 +613,19 @@ footer .social a:hover {
   .universidade.premium {
     padding: 2rem 1rem;
     margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .universidade.premium .info-content {
+    order: 1;
+  }
+
+  .universidade.premium .info-image {
+    order: 2;
+    margin-top: 1rem;
   }
 
   .universidade.premium .info-content h2 {
@@ -598,6 +677,30 @@ footer .social a:hover {
 }
 
 @media (max-width: 480px) {
+  .info-section {
+    padding: 1.8rem 0.8rem;
+  }
+
+  .info-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .info-content p {
+    font-size: 0.8rem;
+  }
+
+  .info-image img {
+    max-width: 240px;
+  }
+
+  .stat h3 {
+    font-size: 0.9rem;
+  }
+
+  .stat p {
+    font-size: 0.7rem;
+  }
+
   .universidade.premium {
     padding: 1.5rem 0.8rem;
   }

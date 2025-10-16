@@ -544,7 +544,20 @@ footer .social a:hover {
   }
 
   .info-image {
+    order: 2;
     margin-top: 1rem;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+    z-index: 5 !important;
+  }
+
+  .info-content {
+    order: 1;
   }
 
   .info-content h2 {
@@ -557,6 +570,10 @@ footer .social a:hover {
 
   .info-image img {
     max-width: 280px;
+    width: 100%;
+    height: auto;
+    display: block !important;
+    opacity: 1;
   }
 
   .stats-grid {
@@ -594,6 +611,10 @@ footer .social a:hover {
   .depoimento video {
     max-width: 350px;
     width: 100%;
+    display: block !important;
+    opacity: 1;
+    position: relative;
+    z-index: 5;
   }
 
   .depoimento .texto {
@@ -626,6 +647,13 @@ footer .social a:hover {
   .universidade.premium .info-image {
     order: 2;
     margin-top: 1rem;
+    display: block !important;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 5;
   }
 
   .universidade.premium .info-content h2 {
@@ -644,6 +672,8 @@ footer .social a:hover {
   .universidade-logo img {
     max-width: 220px;
     width: 70%;
+    display: block !important;
+    opacity: 1;
   }
 
   form {

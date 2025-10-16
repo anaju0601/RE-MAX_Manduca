@@ -646,6 +646,70 @@ footer .social a:hover {
   }
 }
 
+@media (max-width: 768px) {
+  .universidade-intro {
+    text-align: center;
+    margin: 1rem auto;
+  }
+
+  .universidade-intro h2 {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  .universidade.premium {
+    padding: 2rem 1rem;
+    margin: 1rem auto;
+  }
+
+  .universidade.premium .info-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .universidade.premium .info-content p {
+    font-size: 0.85rem;
+  }
+
+  .universidade.premium .btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .universidade-logo img {
+    max-width: 220px;
+    width: 70%;
+  }
+
+  form {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  form input,
+  form textarea {
+    font-size: 0.85rem;
+    padding: 0.55rem;
+  }
+
+  form button {
+    font-size: 0.85rem;
+    padding: 0.65rem;
+  }
+
+  footer {
+    padding: 1.2rem 0.8rem;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+
+  footer .social a {
+    font-size: 1rem;
+    margin: 0 6px;
+  }
+}
+
 @media (max-width: 480px) {
   .universidade.premium {
     padding: 1.5rem 0.8rem;

@@ -1,3 +1,4 @@
+
 :root {
   --azul: #003da5;
   --vermelho: #e41b13;
@@ -289,17 +290,6 @@ section h2 {
   text-align: right;
 }
 
-@media (max-width: 768px) {
-  .depoimentos-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .depoimento {
-    flex-direction: column !important; 
-    text-align: left !important;
-  }
-}
-
 .info-section {
   display: flex;
   align-items: center;
@@ -342,32 +332,9 @@ section h2 {
 
 .info-image {
   flex: 1;
-  height: 250px; 
-  border-radius: 10px;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-}
-
-@media (max-width: 900px) {
-  .info-section, .info-section.reverse {
-    flex-direction: column;
-  }
-
-  .info-image {
-    width: 100%;
-    height: 180px; 
-  }
-}
-
-.info-image {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: none;     
-  padding: 0;           
-  box-shadow: none;
 }
 
 .info-image img {
@@ -375,7 +342,6 @@ section h2 {
   max-width: 400px; 
   height: auto;
   object-fit: contain;
-  border-radius: 0;
   filter: drop-shadow(0px 6px 15px rgba(0, 0, 0, 0.25)); 
   transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -383,17 +349,6 @@ section h2 {
 .info-image img:hover {
   transform: translateY(-4px); 
   filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.35)); 
-}
-
-@media (max-width: 900px) {
-  .info-section {
-    flex-direction: column;
-  }
-
-  .info-image {
-    width: 100%;
-    margin-top: 2rem;
-  }
 }
 
 .stats-grid {
@@ -492,17 +447,6 @@ section h2 {
   filter: drop-shadow(0 8px 20px rgba(0,0,0,0.15));
 }
 
-@media (max-width: 900px) {
-  .universidade.premium .info-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .universidade.premium .info-image {
-    margin-top: 1.5rem; 
-  }
-}
-
 .reveal {
   opacity: 0;
   transform: translateY(30px); 
@@ -592,7 +536,6 @@ footer .social a:hover {
   transform: scale(1.15); 
 }
 
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -603,6 +546,39 @@ footer .social a:hover {
   to { transform: translateY(0); opacity: 1; }
 }
 
+@media (max-width: 900px) {
+  .info-section,
+  .info-section.reverse,
+  .universidade.premium .info-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-image {
+    width: 100%;
+    height: auto;
+    margin-top: 1.5rem;
+  }
+
+  .info-image img {
+    max-width: 90%;
+  }
+
+  .depoimentos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .depoimento {
+    flex-direction: column !important;
+    text-align: left !important;
+  }
+
+  .depoimento video {
+    max-width: 100%;
+    aspect-ratio: auto;
+  }
+}
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -610,10 +586,78 @@ footer .social a:hover {
   }
 
   nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
     margin-top: 0.5rem;
   }
 
+  nav a {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero {
+    height: auto;
+    padding: 5rem 1rem 3rem;
+  }
+
   .hero h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+  }
+
+  .hero button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  section {
+    padding: 4rem 1rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .depoimentos {
+    padding: 5rem 1.5rem;
+  }
+
+  .universidade-logo img {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .info-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .info-content p {
+    font-size: 0.85rem;
+  }
+
+  .hero h2 {
+    font-size: 1.3rem;
+  }
+
+  .hero button {
+    font-size: 0.9rem;
+  }
+
+  nav a {
+    font-size: 0.85rem;
   }
 }

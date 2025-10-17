@@ -244,6 +244,7 @@
           <input type="email" name="email" placeholder="E-mail" required>
           <input type="tel" name="telefone" placeholder="Telefone" required>
           <textarea name="mensagem" rows="4" placeholder="Conte um pouco sobre seu interesse"></textarea>
+          <input type="hidden" name="from_name" id="from_name">
           <button type="submit">Enviar</button>
         </form>
       </section>
@@ -251,15 +252,27 @@
 
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
-      emailjs.init('nt9H7u5wzuLoeOwlX');
+      emailjs.init('BbS5CmWuHMa1Yz6bC');
 
-      document.getElementById('contato-form').addEventListener('submit', function(event) {
+      const form = document.getElementById('contato-form');
+
+      form.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        emailjs.sendForm('service_ho4016h', 'template_f7rh1e2', this)
+        let fromNameField = form.querySelector('input[name="from_name"]');
+        if (!fromNameField) {
+          fromNameField = document.createElement('input');
+          fromNameField.type = 'hidden';
+          fromNameField.name = 'from_name';
+          form.appendChild(fromNameField);
+        }
+
+        fromNameField.value = form.nome.value;
+
+        emailjs.sendForm('service_pab42zc', 'template_msju13c', form)
           .then(function() {
             alert('Mensagem enviada com sucesso!');
-            document.getElementById('contato-form').reset();
+            form.reset();
           }, function(error) {
             alert('Erro ao enviar a mensagem: ' + JSON.stringify(error));
           });

@@ -593,9 +593,9 @@ footer .social a:hover {
     grid-template-columns: 1fr;
   }
 
-  .depoimentos-grid {
-    grid-template-columns: 1fr;
-  }
+  .depoimentos .depoimentos-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
 
   .info-section {
     flex-direction: column;

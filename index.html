@@ -18,8 +18,7 @@
       </div>
 
       <nav>
-        <!-- use href para rolar, evita JS inline em anchor -->
-        <a href="#formulario"><strong>Inscreva-se</strong></a>
+        <a type="button" onclick="document.getElementById('formulario').scrollIntoView({behavior:'smooth'})"><strong>Inscreva-se</strong></a>
       </nav>
     </header>
 
@@ -54,7 +53,6 @@
         </div>
       </section>
 
-      <!-- DEPOIMENTOS -->
       <section class="depoimentos">
         <h2>Assista aos depoimentos de nossos corretores e descubra o porquê!</h2>
         <div class="depoimentos-grid">
@@ -158,7 +156,6 @@
 
           <div class="stats-grid">
             <div class="stat">
-              <!-- SVGs mantidos -->
               <h3>50+</h3>
               <p>Anos de experiência</p>
             </div>
@@ -250,10 +247,8 @@
       </section>
     </main>
 
-    <!-- scripts: mantenha antes do fechamento do main-frame para evitar execução precoce -->
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
-      // inicialização emailjs (sua chave)
       emailjs.init('nt9H7u5wzuLoeOwlX');
 
       document.getElementById('contato-form').addEventListener('submit', function(event) {
@@ -268,7 +263,6 @@
           });
       });
 
-      // animações e intersecção
       window.addEventListener('scroll', () => {
         document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
       });
@@ -285,7 +279,7 @@
       reveals.forEach(el => observer.observe(el));
     </script>
 
-  </div> <!-- .main-frame -->
+  </div> 
 
   <footer id="contato" class="footer-wrapper">
     <p>© 2025 Remax Manduca - Todos os direitos reservados.</p>

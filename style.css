@@ -533,122 +533,167 @@ footer .social a:hover {
   transform: scale(1.12); 
 }
 
-@media (max-width: 900px) {
-  header {
-    flex-direction: row;
-    justify-content: space-between; 
+@media (max-width: 768px) {
+  .info-section,
+  .info-section.reverse {
+    flex-direction: column !important;
     align-items: center;
-    padding: 0.8rem 1rem;
-  }
-
-  nav {
-    flex-direction: row; 
-    gap: 0.5rem;
-    margin-top: 0; 
-  }
-
-  nav a {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.8rem;
-  }
-}
-
-  .hero {
-    height: auto;
-    padding: 4rem 1rem 2.5rem;
-  }
-
-  .hero h2 {
-    font-size: 1.5rem;
-  }
-
-  .hero button {
-    width: 100%;
-    font-size: 0.95rem;
-    padding: 0.7rem 1rem;
-  }
-
-  section {
-    padding: 3rem 1rem;
-  }
-
-  section h2 {
-    font-size: 1.4rem;
-  }
-
-  .benefits {
-    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    padding: 2rem 1rem;
     gap: 1rem;
   }
 
-  .depoimentos {
-    padding: 4rem 1rem;
+  .info-image {
+    order: 2;
+    margin-top: 1rem;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+    z-index: 5 !important;
+  }
+
+  .info-content {
+    order: 1;
+  }
+
+  .info-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .info-content p {
+    font-size: 0.85rem;
+  }
+
+  .info-image img {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    display: block !important;
+    opacity: 1;
+  }
+
+  .stats-grid {
+    gap: 0.6rem;
+  }
+
+  .stat {
+    padding: 0.7rem;
+  }
+
+  .stat h3 {
+    font-size: 1rem;
+  }
+
+  .stat p {
+    font-size: 0.75rem;
   }
 
   .depoimentos-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
   }
 
   .depoimento {
-    flex-direction: column !important;
-    text-align: left !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  .depoimento video {
-    max-width: 100%;
-    aspect-ratio: auto;
-  }
-
-  .info-section,
-  .info-section.reverse,
-  .universidade.premium .info-section {
+  .depoimento:nth-child(even) {
     flex-direction: column;
     text-align: center;
   }
 
-  .info-image {
+  .depoimento video {
+    max-width: 350px;
     width: 100%;
-    height: auto;
+    display: block !important;
+    opacity: 1;
+    position: relative;
+    z-index: 5;
+  }
+
+  .depoimento .texto {
     margin-top: 1rem;
   }
 
-  .info-image img {
-    max-width: 90%;
+  .universidade-intro {
+    text-align: center;
+    margin: 1rem auto;
   }
 
-  .universidade-logo img {
-    width: 85%;
+  .universidade-intro h2 {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  .universidade.premium {
+    padding: 2rem 1rem;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .universidade.premium .info-content {
+    order: 1;
+  }
+
+  .universidade.premium .info-image {
+    order: 2;
+    margin-top: 1rem;
+    display: block !important;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 5;
   }
 
   .universidade.premium .info-content h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .universidade.premium .info-content p {
     font-size: 0.85rem;
   }
 
+  .universidade.premium .btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .universidade-logo img {
+    max-width: 220px;
+    width: 70%;
+    display: block !important;
+    opacity: 1;
+  }
+
   form {
+    width: 90%;
     max-width: 400px;
   }
 
-@media (max-width: 768px) {
-  .hero h2 {
-    font-size: 1.4rem;
+  form input,
+  form textarea {
+    font-size: 0.85rem;
+    padding: 0.55rem;
   }
 
-  .hero button {
-    font-size: 0.9rem;
-    padding: 0.6rem 0.9rem;
+  form button {
+    font-size: 0.85rem;
+    padding: 0.65rem;
   }
 
-  section h2 {
-    font-size: 1.3rem;
-  }
-
-  .benefits {
-    grid-template-columns: 1fr;
+  footer {
+    padding: 1.2rem 0.8rem;
   }
 
   footer p {
@@ -657,21 +702,13 @@ footer .social a:hover {
 
   footer .social a {
     font-size: 1rem;
+    margin: 0 6px;
   }
 }
 
 @media (max-width: 480px) {
-  .hero h2 {
-    font-size: 1.2rem;
-  }
-
-  .hero button {
-    font-size: 0.85rem;
-    padding: 0.5rem 0.8rem;
-  }
-
-  section h2 {
-    font-size: 1.2rem;
+  .info-section {
+    padding: 1.8rem 0.8rem;
   }
 
   .info-content h2 {
@@ -682,15 +719,45 @@ footer .social a:hover {
     font-size: 0.8rem;
   }
 
-  nav a {
+  .info-image img {
+    max-width: 240px;
+  }
+
+  .stat h3 {
+    font-size: 0.9rem;
+  }
+
+  .stat p {
+    font-size: 0.7rem;
+  }
+
+  .universidade.premium {
+    padding: 1.5rem 0.8rem;
+  }
+
+  .universidade.premium .info-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .universidade.premium .info-content p {
     font-size: 0.8rem;
   }
 
-  .depoimentos-grid {
-    gap: 1.5rem;
+  .universidade-logo img {
+    max-width: 200px;
   }
 
-  .universidade-logo img {
-    width: 80%;
+  form {
+    width: 95%;
+  }
+
+  form input,
+  form textarea,
+  form button {
+    font-size: 0.8rem;
+  }
+
+  footer p {
+    font-size: 0.75rem;
   }
 }

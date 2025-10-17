@@ -507,21 +507,31 @@ footer .social a:hover { transform:scale(1.15); }
 @media (max-width: 480px) {
   /* Header stacks brand + nav */
   header {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.5rem;
+    flex-direction: row; /* logo e nav na mesma linha */
+    align-items: center; /* centraliza verticalmente */
+    justify-content: space-between; /* um em cada canto */
     padding: 0.8rem 1rem;
+    gap: 0; /* remove o gap da coluna */
   }
-  header .brand { justify-content: flex-start; padding-left: 4px; }
+
+  header .brand {
+    justify-content: flex-start; /* mantém a logo à esquerda */
+    padding-left: 0; /* opcional, ajusta o espaçamento */
+  }
+
   nav {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: right;
+    width: auto; /* deixa nav ocupar só o espaço necessário */
+    justify-content: flex-end; /* link à direita */
     gap: 6px;
-    padding-bottom: 6px;
+    padding-bottom: 0;
   }
-  nav a { margin: 0; font-size: 0.85rem; padding: 0.4rem 0.8rem; border-radius: 20px; }
+
+  nav a {
+    margin: 0;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+  }
 
   /* Hero */
   .hero {

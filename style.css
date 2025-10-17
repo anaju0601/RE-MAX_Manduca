@@ -132,6 +132,7 @@ nav a:hover {
 }
 
 .hero h2,
+.hero p,
 .hero button { position: relative; z-index: 2; }
 
 .hero h2 {
@@ -146,7 +147,7 @@ nav a:hover {
   color: white;
   border: none;
   padding: 1rem 2rem;
-  margin-top: 1.5rem;
+  margin-top: 5rem;
   border-radius: 50px;
   font-size: 1.1rem;
   cursor: pointer;

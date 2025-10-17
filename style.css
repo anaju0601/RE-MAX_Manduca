@@ -533,231 +533,103 @@ footer .social a:hover {
   transform: scale(1.12); 
 }
 
-@media (max-width: 768px) {
-  .info-section,
-  .info-section.reverse {
-    flex-direction: column !important;
-    align-items: center;
-    text-align: center;
-    padding: 2rem 1rem;
-    gap: 1rem;
-  }
+/* -------------------------------------- */
+/* MEDIA QUERIES (Responsividade) */
+/* -------------------------------------- */
 
-  .info-image {
-    order: 2;
-    margin-top: 1rem;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    height: auto !important;
-    position: relative !important;
-    z-index: 5 !important;
-  }
+@media (max-width: 900px) {
+    /* Ajustes Gerais para Telas Maiores de Tablet */
+    section {
+        padding: 3rem 1rem; /* Reduz o padding lateral */
+    }
 
-  .info-content {
-    order: 1;
-  }
+    .depoimentos-grid {
+        /* Muda de 2 colunas para 1 em tablets */
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 
-  .info-content h2 {
-    font-size: 1.2rem;
-  }
+    .depoimento {
+        /* Ajuste do layout interno para melhor leitura */
+        flex-direction: column;
+        text-align: center;
+    }
 
-  .info-content p {
-    font-size: 0.85rem;
-  }
+    /* Reverte o ajuste do ímpar para manter o padrão em coluna */
+    .depoimento:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+    }
 
-  .info-image img {
-    max-width: 280px;
-    width: 100%;
-    height: auto;
-    display: block !important;
-    opacity: 1;
-  }
+    .depoimento video {
+        max-width: 150px;
+        margin: 0.5rem 0;
+    }
 
-  .stats-grid {
-    gap: 0.6rem;
-  }
+    .info-section,
+    .info-section.reverse {
+        /* Muda de linha para coluna em tablets, empilhando o conteúdo */
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
 
-  .stat {
-    padding: 0.7rem;
-  }
-
-  .stat h3 {
-    font-size: 1rem;
-  }
-
-  .stat p {
-    font-size: 0.75rem;
-  }
-
-  .depoimentos-grid {
-    grid-template-columns: 1fr; 
-    gap: 1.5rem;
-  }
-
-  .depoimento {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .depoimento:nth-child(even) {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .depoimento video {
-    max-width: 350px;
-    width: 100%;
-    display: block !important;
-    opacity: 1;
-    position: relative;
-    z-index: 5;
-  }
-
-  .depoimento .texto {
-    margin-top: 1rem;
-  }
-
-  .universidade-intro {
-    text-align: center;
-    margin: 1rem auto;
-  }
-
-  .universidade-intro h2 {
-    text-align: center;
-    font-size: 1.2rem;
-  }
-
-  .universidade.premium {
-    padding: 2rem 1rem;
-    margin: 1rem auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .universidade.premium .info-content {
-    order: 1;
-  }
-
-  .universidade.premium .info-image {
-    order: 2;
-    margin-top: 1rem;
-    display: block !important;
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    opacity: 1 !important;
-    position: relative;
-    z-index: 5;
-  }
-
-  .universidade.premium .info-content h2 {
-    font-size: 1.2rem;
-  }
-
-  .universidade.premium .info-content p {
-    font-size: 0.85rem;
-  }
-
-  .universidade.premium .btn {
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .universidade-logo img {
-    max-width: 220px;
-    width: 70%;
-    display: block !important;
-    opacity: 1;
-  }
-
-  form {
-    width: 90%;
-    max-width: 400px;
-  }
-
-  form input,
-  form textarea {
-    font-size: 0.85rem;
-    padding: 0.55rem;
-  }
-
-  form button {
-    font-size: 0.85rem;
-    padding: 0.65rem;
-  }
-
-  footer {
-    padding: 1.2rem 0.8rem;
-  }
-
-  footer p {
-    font-size: 0.8rem;
-  }
-
-  footer .social a {
-    font-size: 1rem;
-    margin: 0 6px;
-  }
+    .info-image {
+        margin-top: 1rem;
+    }
 }
 
-@media (max-width: 480px) {
-  .info-section {
-    padding: 1.8rem 0.8rem;
-  }
+@media (max-width: 600px) {
+    /* Ajustes para Celulares */
+    header {
+        /* Otimiza o cabeçalho para dispositivos móveis */
+        flex-direction: column; /* Empilha logo e navegação */
+        padding: 0.8rem 1rem;
+        text-align: center;
+    }
 
-  .info-content h2 {
-    font-size: 1.1rem;
-  }
+    header img {
+        height: 40px;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
 
-  .info-content p {
-    font-size: 0.8rem;
-  }
+    header h1 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
 
-  .info-image img {
-    max-width: 240px;
-  }
+    nav {
+        display: flex; /* Garante que os links continuem lado a lado */
+        flex-wrap: wrap; /* Permite que os links quebrem a linha se necessário */
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
 
-  .stat h3 {
-    font-size: 0.9rem;
-  }
+    nav a {
+        margin: 0.2rem 6px; /* Ajusta espaçamento dos links de navegação */
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
 
-  .stat p {
-    font-size: 0.7rem;
-  }
+    .hero {
+        padding-bottom: 3rem; /* Reduz o padding inferior no hero */
+    }
 
-  .universidade.premium {
-    padding: 1.5rem 0.8rem;
-  }
+    .hero h2 {
+        font-size: 1.5rem; /* Reduz o tamanho do título principal */
+    }
 
-  .universidade.premium .info-content h2 {
-    font-size: 1.1rem;
-  }
+    .hero button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
 
-  .universidade.premium .info-content p {
-    font-size: 0.8rem;
-  }
+    .depoimento video {
+        max-width: 100%; /* Vídeo ocupa toda a largura disponível */
+    }
 
-  .universidade-logo img {
-    max-width: 200px;
-  }
-
-  form {
-    width: 95%;
-  }
-
-  form input,
-  form textarea,
-  form button {
-    font-size: 0.8rem;
-  }
-
-  footer p {
-    font-size: 0.75rem;
-  }
+    .stat h3 {
+        font-size: 1rem; /* Ajusta o tamanho da fonte das estatísticas */
+    }
 }

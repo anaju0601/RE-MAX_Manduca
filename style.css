@@ -534,19 +534,68 @@ footer .social a:hover {
 }
 
 @media (max-width: 768px) {
+  /* ========= INFO SECTIONS (Global, Brasil, Manduca) ========= */
   .info-section,
   .info-section.reverse {
     flex-direction: column !important;
     align-items: center;
     text-align: center;
+    padding: 2rem 1rem;
+    gap: 1rem;
   }
 
   .info-image {
+    order: 2;
     margin-top: 1rem;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+    z-index: 5 !important;
   }
 
+  .info-content {
+    order: 1;
+  }
+
+  .info-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .info-content p {
+    font-size: 0.85rem;
+  }
+
+  .info-image img {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    display: block !important;
+    opacity: 1;
+  }
+
+  .stats-grid {
+    gap: 0.6rem;
+  }
+
+  .stat {
+    padding: 0.7rem;
+  }
+
+  .stat h3 {
+    font-size: 1rem;
+  }
+
+  .stat p {
+    font-size: 0.75rem;
+  }
+
+  /* ========= DEPOIMENTOS ========= */
   .depoimentos-grid {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr; /* um depoimento por linha */
     gap: 1.5rem;
   }
 
@@ -564,12 +613,17 @@ footer .social a:hover {
   .depoimento video {
     max-width: 350px;
     width: 100%;
+    display: block !important;
+    opacity: 1;
+    position: relative;
+    z-index: 5;
   }
 
   .depoimento .texto {
     margin-top: 1rem;
   }
 
+  /* ========= UNIVERSIDADE ========= */
   .universidade-intro {
     text-align: center;
     margin: 1rem auto;
@@ -596,6 +650,13 @@ footer .social a:hover {
   .universidade.premium .info-image {
     order: 2;
     margin-top: 1rem;
+    display: block !important;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 5;
   }
 
   .universidade.premium .info-content h2 {
@@ -614,8 +675,11 @@ footer .social a:hover {
   .universidade-logo img {
     max-width: 220px;
     width: 70%;
+    display: block !important;
+    opacity: 1;
   }
 
+  /* ========= FORMULÁRIO ========= */
   form {
     width: 90%;
     max-width: 400px;
@@ -632,70 +696,7 @@ footer .social a:hover {
     padding: 0.65rem;
   }
 
-  footer {
-    padding: 1.2rem 0.8rem;
-  }
-
-  footer p {
-    font-size: 0.8rem;
-  }
-
-  footer .social a {
-    font-size: 1rem;
-    margin: 0 6px;
-  }
-}
-
-@media (max-width: 768px) {
-  .universidade-intro {
-    text-align: center;
-    margin: 1rem auto;
-  }
-
-  .universidade-intro h2 {
-    text-align: center;
-    font-size: 1.2rem;
-  }
-
-  .universidade.premium {
-    padding: 2rem 1rem;
-    margin: 1rem auto;
-  }
-
-  .universidade.premium .info-content h2 {
-    font-size: 1.2rem;
-  }
-
-  .universidade.premium .info-content p {
-    font-size: 0.85rem;
-  }
-
-  .universidade.premium .btn {
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .universidade-logo img {
-    max-width: 220px;
-    width: 70%;
-  }
-
-  form {
-    width: 90%;
-    max-width: 400px;
-  }
-
-  form input,
-  form textarea {
-    font-size: 0.85rem;
-    padding: 0.55rem;
-  }
-
-  form button {
-    font-size: 0.85rem;
-    padding: 0.65rem;
-  }
-
+  /* ========= FOOTER ========= */
   footer {
     padding: 1.2rem 0.8rem;
   }
@@ -711,6 +712,32 @@ footer .social a:hover {
 }
 
 @media (max-width: 480px) {
+  /* ========= INFO SECTIONS ========= */
+  .info-section {
+    padding: 1.8rem 0.8rem;
+  }
+
+  .info-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .info-content p {
+    font-size: 0.8rem;
+  }
+
+  .info-image img {
+    max-width: 240px;
+  }
+
+  .stat h3 {
+    font-size: 0.9rem;
+  }
+
+  .stat p {
+    font-size: 0.7rem;
+  }
+
+  /* ========= UNIVERSIDADE ========= */
   .universidade.premium {
     padding: 1.5rem 0.8rem;
   }
@@ -727,6 +754,7 @@ footer .social a:hover {
     max-width: 200px;
   }
 
+  /* ========= FORMULÁRIO ========= */
   form {
     width: 95%;
   }
@@ -737,6 +765,7 @@ footer .social a:hover {
     font-size: 0.8rem;
   }
 
+  /* ========= FOOTER ========= */
   footer p {
     font-size: 0.75rem;
   }

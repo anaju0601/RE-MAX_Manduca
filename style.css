@@ -103,11 +103,11 @@ nav a:hover {
   min-height: calc(100vh - 80px); 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   color: white;
   text-align: center;
-  padding: 0 1rem;
+  padding: 0 1rem 5rem 1rem; /* margem inferior para ficar bonito */
   overflow: hidden;
 }
 
@@ -138,7 +138,7 @@ nav a:hover {
 .hero h2 {
   color: var(--cinza-claro);
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
   line-height: 1.1;
 }
 

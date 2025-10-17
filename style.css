@@ -517,7 +517,7 @@ footer .social a:hover { transform:scale(1.15); }
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: right;
     gap: 6px;
     padding-bottom: 6px;
   }

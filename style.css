@@ -537,99 +537,146 @@ footer .social a:hover {
 /* MEDIA QUERIES (Responsividade) */
 /* -------------------------------------- */
 
+/* Tablet (Telas de até 900px, por exemplo) */
 @media (max-width: 900px) {
-    /* Ajustes Gerais para Telas Maiores de Tablet */
+    /* Ajustes Gerais de Seções */
     section {
-        padding: 3rem 1rem; /* Reduz o padding lateral */
+        padding: 3rem 1.5rem; /* Ajusta padding vertical e mantém o horizontal */
     }
-
-    .depoimentos-grid {
-        /* Muda de 2 colunas para 1 em tablets */
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .depoimento {
-        /* Ajuste do layout interno para melhor leitura */
-        flex-direction: column;
-        text-align: center;
-    }
-
-    /* Reverte o ajuste do ímpar para manter o padrão em coluna */
-    .depoimento:nth-child(even) {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .depoimento video {
-        max-width: 150px;
-        margin: 0.5rem 0;
-    }
-
-    .info-section,
-    .info-section.reverse {
-        /* Muda de linha para coluna em tablets, empilhando o conteúdo */
-        flex-direction: column;
-        text-align: center;
-        padding: 2rem 1rem;
-    }
-
-    .info-image {
-        margin-top: 1rem;
-    }
-}
-
-@media (max-width: 600px) {
-    /* Ajustes para Celulares */
+    
+    /* Header */
     header {
-        /* Otimiza o cabeçalho para dispositivos móveis */
-        flex-direction: column; /* Empilha logo e navegação */
-        padding: 0.8rem 1rem;
+        flex-direction: column; /* Empilha logo/título sobre a navegação */
+        padding: 0.8rem 1.5rem;
         text-align: center;
-    }
-
-    header img {
-        height: 40px;
-        margin-right: 0;
-        margin-bottom: 0.5rem;
     }
 
     header h1 {
-        font-size: 1rem;
         margin-bottom: 0.5rem;
     }
 
     nav {
-        display: flex; /* Garante que os links continuem lado a lado */
-        flex-wrap: wrap; /* Permite que os links quebrem a linha se necessário */
-        justify-content: center;
         margin-top: 0.5rem;
+        /* Garante que a navegação ocupe toda a largura para centralizar links */
+        width: 100%; 
+        justify-content: center;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding-bottom: 4rem; /* Reduz o padding inferior */
     }
 
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* Info Sections (Globais, Brasil, Manduca) */
+    .info-section,
+    .info-section.reverse {
+        /* Muda de linha (row) para coluna (column) para empilhar conteúdo */
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .info-content {
+        order: 2; /* Coloca o conteúdo abaixo da imagem por padrão */
+    }
+    
+    .info-image {
+        order: 1; /* Coloca a imagem acima do conteúdo por padrão */
+        margin-bottom: 1.5rem;
+    }
+
+    /* Inverte a ordem apenas nas seções 'reverse' para manter o design */
+    .info-section.reverse .info-content {
+        order: 1;
+    }
+    .info-section.reverse .info-image {
+        order: 2;
+    }
+    
+    .info-image img {
+        max-width: 300px;
+    }
+
+    /* Depoimentos */
+    .depoimentos-grid {
+        grid-template-columns: 1fr; /* Muda de 2 para 1 coluna */
+        gap: 1.5rem;
+    }
+
+    .depoimento,
+    .depoimento:nth-child(even) {
+        /* Garante que todos os depoimentos se empilhem */
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .depoimento video {
+        max-width: 250px;
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
+
+/* Celular (Telas de até 600px, por exemplo) */
+@media (max-width: 600px) {
+    /* Ajustes de Tipografia */
+    :root {
+        font-size: clamp(12px, 2vw + 0.5rem, 16px);
+    }
+    
+    h2 {
+        font-size: 1.4rem !important; /* Força um tamanho menor para títulos de seção */
+    }
+
+    /* Header e Navegação */
+    header img {
+        height: 35px;
+    }
+    
     nav a {
-        margin: 0.2rem 6px; /* Ajusta espaçamento dos links de navegação */
+        margin: 0.2rem 5px;
         font-size: 0.8rem;
         padding: 0.3rem 0.6rem;
     }
 
-    .hero {
-        padding-bottom: 3rem; /* Reduz o padding inferior no hero */
-    }
-
+    /* Hero Section */
     .hero h2 {
-        font-size: 1.5rem; /* Reduz o tamanho do título principal */
+        font-size: 1.3rem;
     }
 
     .hero button {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
+        padding: 0.8rem 1.4rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Benefícios */
+    .benefits {
+        /* Garante que os benefícios fiquem em duas colunas menores ou empilhados, se for muito estreito */
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+        gap: 0.8rem;
     }
 
-    .depoimento video {
-        max-width: 100%; /* Vídeo ocupa toda a largura disponível */
+    /* Stats (Números) */
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.5rem;
     }
 
     .stat h3 {
-        font-size: 1rem; /* Ajusta o tamanho da fonte das estatísticas */
+        font-size: 1rem;
+    }
+
+    .stat p {
+        font-size: 0.75rem;
+    }
+
+    /* Formulário */
+    form {
+        max-width: 100%;
+        padding: 0 1rem;
     }
 }
